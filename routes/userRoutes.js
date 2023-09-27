@@ -3,15 +3,15 @@ const router = express.Router();
 
 const {
   getAllUsers,
-  createNewUser,
   updateUser,
   deleteUser,
+  createUser,
 } = require('../controllers/userController');
 
 router
   .route('/')
   .get(getAllUsers)
-  .post(createNewUser)
+  .post(createUser)
   .patch(updateUser)
   .delete(deleteUser);
 

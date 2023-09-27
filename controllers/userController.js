@@ -26,7 +26,7 @@ const getAllUsers = asyncHandler(async (req, res) => {
  *  @access Private
  */
 //! asyncHandler allows to not use try catch blocks
-const createNewUser = asyncHandler(async (req, res) => {
+const createUser = asyncHandler(async (req, res) => {
   const { username, password, roles } = req?.body;
   if (
     !username ||
@@ -75,7 +75,7 @@ const updateUser = asyncHandler(async (req, res) => {
     typeof active !== 'boolean'
   ) {
     return res.status(400).json({
-      message: 'Id, username and roles fields are required!',
+      message: 'Id, username, roles and active fields are required!',
     });
   }
 
@@ -129,7 +129,7 @@ const deleteUser = asyncHandler(async (req, res) => {
 
 module.exports = {
   getAllUsers,
-  createNewUser,
+  createUser,
   updateUser,
   deleteUser,
 };
